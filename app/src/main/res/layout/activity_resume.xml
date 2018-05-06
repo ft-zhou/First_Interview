@@ -28,6 +28,7 @@
                 android:layout_below="@id/tv_hide"
                 android:text="支持简历对外开放与关闭"/>
             <Switch
+                android:id="@+id/show_or_hide"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -114,6 +115,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_sex"
@@ -150,6 +152,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_age"
@@ -186,6 +189,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_native"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_native"
@@ -222,6 +226,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_address"
@@ -392,6 +397,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_record"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_record"
@@ -428,6 +434,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_graduation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_graduation"
@@ -487,6 +494,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_place"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_place"
@@ -523,6 +531,7 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_position"
@@ -559,12 +568,13 @@
                     android:textSize="16sp"
                     android:text="*"/>
                 <TextView
+                    android:id="@+id/pv_salary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_salary"
                     android:layout_centerVertical="true"
                     android:textSize="14sp"
-                    android:text="4000~5000"/>
+                    android:text="4000以上"/>
                 <ImageView
                     android:id="@+id/right_icon_salary"
                     android:layout_width="20dp"
@@ -652,15 +662,83 @@
                     android:textSize="14sp"
                     android:hint="请介绍一下您自己（不超过200字）"/>
             </RelativeLayout>
-            <GridView
-                android:id="@+id/gridView"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:background="@color/background"/>
+            <RelativeLayout
+                android:id="@+id/rl_intro_pictures"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:columnWidth="60dp"
-                android:horizontalSpacing="10dp"
-                android:numColumns="3"
-                android:verticalSpacing="10dp"/>
+                android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/tv_pictures"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:textSize="16sp"
+                    android:text="图片（最多选择6张）"/>
+                <GridView
+                    android:id="@+id/gridView"
+                    android:layout_below="@id/tv_pictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="15dp"
+                    android:columnWidth="80dp"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="10dp"/>
+            </RelativeLayout>
         </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="7dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/tv_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="视频简介（不超过3分钟）"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="3dp"
+                android:background="@color/background"/>
+            <RelativeLayout
+                android:id="@+id/rl_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+                <GridView
+                    android:id="@+id/gridView_video"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:columnWidth="80dp"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="10dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="7dp" />
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:text="保存"/>
     </LinearLayout>
 </ScrollView>
