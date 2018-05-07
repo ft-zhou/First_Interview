@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ft.first_interview.Activity.DialogActivity;
 import com.ft.first_interview.R;
@@ -40,7 +42,12 @@ public class NotificationFragment extends Fragment {
         messagelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+//                TextView choose_company_name = (TextView) messagelist.getChildAt(arg2).findViewById(R.id.tv_company_name);
+//                Toast toast = Toast.makeText(getContext(), choose_company_name.getText().toString(), Toast.LENGTH_SHORT);
+//                toast.setGravity(Gravity.CENTER, 0, 0);
+//                toast.show();
                 Intent intent=new Intent(getContext(), DialogActivity.class);
+                intent.putExtra("username","一面科技有限公司");
                 startActivity(intent);
             }
         });

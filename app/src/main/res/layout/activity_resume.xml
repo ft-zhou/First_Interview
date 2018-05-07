@@ -626,10 +626,11 @@
                     android:layout_margin="3dp"
                     android:paddingTop="2dp"
                     android:minLines="3"
+                    android:maxLength="200"
                     android:gravity="top"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:hint="请填写您所掌握的技能及获奖情况"/>
+                    android:hint="请填写您所掌握的技能及获奖情况（不超过200字）"/>
             </RelativeLayout>
             <ImageView
                 android:layout_width="match_parent"

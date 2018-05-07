@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ResumeActivity"
+        <activity
+            android:name=".Activity.NavigationActivity"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,20 +23,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.NavigationActivity"/>
-        <activity android:name=".Activity.JobDetailActivity" />
-        <activity android:name=".Activity.MainActivity"/>
-        <!--<activity android:name=".Activity.ResumeActivity"-->
-            <!--android:windowSoftInputMode="adjustPan|stateHidden"/>-->
-        <activity android:name=".Activity.ApplyActivity" />
-        <activity android:name=".Activity.TargetActivity" />
-        <activity android:name=".Activity.FavoriteActivity" />
-        <activity android:name=".Activity.FeedbackActivity" />
-        <activity android:name=".Activity.SettingActivity" />
-        <activity android:name=".Activity.DialogActivity"/>
-        <activity android:name=".PictureSelector.PlusImageActivity"/>
+        <!-- <activity android:name=".Activity.NavigationActivity"/> -->
+        <activity
+            android:name=".Activity.JobDetailActivity"
+            android:label="招聘信息详情" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Activity.ResumeActivity"
+            android:label="我的简历"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.ApplyActivity"
+            android:label="我的应聘申请" />
+        <activity
+            android:name=".Activity.FavoriteActivity"
+            android:label="我的收藏" />
+        <activity
+            android:name=".Activity.FeedbackActivity"
+            android:label="用户反馈"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.SettingActivity"
+            android:label="设置" />
+        <activity android:name=".Activity.DialogActivity" />
+        <activity android:name=".PictureSelector.PlusImageActivity" />
 
-        <!--适配android6.0以上拍照问题-->
+        <!-- 适配android6.0以上拍照问题 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -45,6 +60,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <activity android:name=".Activity.CompanyInformation"></activity>
     </application>
 
 </manifest>

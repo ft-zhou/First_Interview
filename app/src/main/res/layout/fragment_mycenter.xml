@@ -115,38 +115,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp" />
         <RelativeLayout
-            android:id="@+id/rl_target"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:padding="10dp"
-            android:background="@color/white">
-            <ImageView
-                android:id="@+id/icon_target"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginLeft="15dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/target"/>
-            <TextView
-                android:id="@+id/mycenter_target"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_target"
-                android:textSize="16sp"
-                android:text="求职意向" />
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/right"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"/>
-        </RelativeLayout>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-        <RelativeLayout
             android:id="@+id/rl_favorite"
             android:layout_width="match_parent"
             android:layout_height="55dp"

@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.ft.first_interview.R;
 
-public class TargetActivity extends AppCompatActivity {
+public class CompanyInformation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_target);
+        setContentView(R.layout.activity_company_information);
     }
 }
