@@ -71,7 +71,7 @@
             android:layout_margin="3dp"
             android:background="@color/background"/>
         <GridView
-            android:id="@+id/gridView"
+            android:id="@+id/feedback_gridView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="15dp"
@@ -81,7 +81,7 @@
             android:verticalSpacing="10dp"/>
     </LinearLayout>
     <Button
-        android:id="@+id/btn_submit"
+        android:id="@+id/btn_feedback"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

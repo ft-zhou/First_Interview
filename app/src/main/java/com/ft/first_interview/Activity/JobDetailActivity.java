@@ -50,10 +50,20 @@ public class JobDetailActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_job_favorite:
-                    toast = Toast.makeText(getApplicationContext(), "收藏成功！", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.show();
-                    break;
+                    if (btn_job_favorite.getText().equals("收藏")) {
+                        btn_job_favorite.setText("取消收藏");
+                        toast = Toast.makeText(getApplicationContext(), "收藏成功！", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        break;
+                    }
+                    else{
+                        btn_job_favorite.setText("收藏");
+                        toast = Toast.makeText(getApplicationContext(), "已取消收藏！", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        break;
+                    }
                 case R.id.btn_job_delivery:
                     toast = Toast.makeText(getApplicationContext(), "简历投递成功！", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);

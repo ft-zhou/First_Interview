@@ -49,7 +49,7 @@ public class NavigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation);
 //        setCustomActionBar();
 
-        mFragmentManager =getSupportFragmentManager();
+        mFragmentManager = getSupportFragmentManager();
         changeFragment(new HomeFragment());
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

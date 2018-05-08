@@ -49,6 +49,9 @@
             android:label="设置" />
         <activity android:name=".Activity.DialogActivity" />
         <activity android:name=".PictureSelector.PlusImageActivity" />
+        <activity
+            android:name=".Activity.CompanyInformation"
+            android:label="公司信息" />
 
         <!-- 适配android6.0以上拍照问题 -->
         <provider
@@ -61,7 +64,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".Activity.CompanyInformation"></activity>
+        <activity android:name=".Activity.InviteActivity"></activity>
     </application>
 
 </manifest>

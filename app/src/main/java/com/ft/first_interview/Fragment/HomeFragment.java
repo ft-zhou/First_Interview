@@ -2,24 +2,21 @@ package com.ft.first_interview.Fragment;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.ft.first_interview.Activity.JobDetailActivity;
 import com.ft.first_interview.Activity.SearchActivity;
+import com.ft.first_interview.Adapter.JobItemAdapter;
 import com.ft.first_interview.R;
 import com.ft.first_interview.bean.Job;
 
@@ -27,12 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
-    final String[] name = new String[] { "张国荣", "张学友", "谭咏麟" };
-    final String[] message = new String[] {
-            "张国荣，1956年9月12日生于香港，歌手、演员、音乐人；影视歌多栖发展的代表之一。1977年正式出道。1983年以《风继续吹》成名。1984年演唱的《Monica》是香港歌坛第一支同获十大中文金曲、十大劲歌金曲的舞曲 。 1986年、1987年获劲歌金曲金奖",
-            "张学友，歌手、演员，1961年7月10日出生于香港，1984年获得香港首届十八区业余歌唱大赛冠军，正式出道，1993年发行的国语唱片《吻别》年度销量超过400万张，1995年、1996年连续两年获得世界音乐大奖全球销量最高亚洲流行乐歌手奖",
-            "谭咏麟，1950年8月23日出生于香港，籍贯广东新会，中国香港男歌手、音乐人、演员。[1]20世纪60年代末为Loosers乐队成员。1973年任温拿乐队主音歌手。1975年参演首部电影《大家乐》。1978年温拿乐队宣布解散，谭咏麟以个人身份发展。1979年赴台湾发展事业，推出首张个人专辑《反斗星》" };
 
     private ImageView topImage;
     private RelativeLayout top_rl;
@@ -71,10 +62,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Intent intent=new Intent(getContext(), JobDetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("photo", R.mipmap.ic_launcher_round);
-                bundle.putString("message", message[arg2]);
-                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -189,41 +176,4 @@ public class HomeFragment extends Fragment {
 
     }
 
-}
-class JobItemAdapter extends ArrayAdapter<Job> {
-
-    private int layoutId;
-
-    public JobItemAdapter(Context context, int layoutId, List<Job> list) {
-        super(context, layoutId, list);
-        this.layoutId = layoutId;
-    }
-
-    @NonNull
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Job item = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(layoutId, parent, false);
-
-        TextView title = (TextView) view.findViewById(R.id.joblistitem_title);
-        title.setText(item.getJob_title());
-        TextView company = (TextView) view.findViewById(R.id.joblistitem_company);
-        company.setText(item.getCompany());
-        TextView salary = (TextView) view.findViewById(R.id.joblistitem_salary);
-        salary.setText(item.getJob_salary());
-        TextView place = (TextView) view.findViewById(R.id.joblistitem_place);
-        place.setText(item.getJob_place());
-        TextView tag = (TextView) view.findViewById(R.id.joblistitem_tag);
-        ArrayList<String> s;
-        s = item.getJob_tag();
-        String ts = s.get(0);
-        for(int i = 1;i < s.size(); i ++){
-            ts = ts +" | "+ s.get(i);
-        }
-        tag.setText(ts);
-        TextView posttime = (TextView) view.findViewById(R.id.joblistitem_time);
-        posttime.setText(item.getPosttime());
-
-        return view;
-    }
 }

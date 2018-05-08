@@ -46,7 +46,7 @@ public class NotificationFragment extends Fragment {
 //                Toast toast = Toast.makeText(getContext(), choose_company_name.getText().toString(), Toast.LENGTH_SHORT);
 //                toast.setGravity(Gravity.CENTER, 0, 0);
 //                toast.show();
-                Intent intent=new Intent(getContext(), DialogActivity.class);
+                Intent intent = new Intent(getContext(), DialogActivity.class);
                 intent.putExtra("username","一面科技有限公司");
                 startActivity(intent);
             }
