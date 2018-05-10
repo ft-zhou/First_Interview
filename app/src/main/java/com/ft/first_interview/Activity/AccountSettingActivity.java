@@ -1,10 +1,12 @@
 package com.ft.first_interview.Activity;
 
+import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +25,7 @@ public class AccountSettingActivity extends AppCompatActivity {
     private RelativeLayout rl_setting_email;
     private TextView tv_setting_email;
     private RelativeLayout rl_setting_phone;
+    private TextView tv_setting_phone;
     private RelativeLayout rl_setting_wechat;
 
     @Override
@@ -35,6 +38,7 @@ public class AccountSettingActivity extends AppCompatActivity {
         rl_setting_email = (RelativeLayout) findViewById(R.id.rl_setting_email);
         tv_setting_email = (TextView) findViewById(R.id.tv_setting_email);
         rl_setting_phone = (RelativeLayout) findViewById(R.id.rl_setting_phone);
+        tv_setting_phone = (TextView) findViewById(R.id.tv_setting_phone);
         rl_setting_wechat = (RelativeLayout) findViewById(R.id.rl_setting_wechat);
 
         rl_setting_username.setOnClickListener(new asOnClickListener());
@@ -59,7 +63,8 @@ public class AccountSettingActivity extends AppCompatActivity {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             if(edit.getText().length() > 10 ) {
-                                                Toast.makeText(getApplicationContext(),"修改失败！用户名不能超过10个字！",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getApplicationContext(),
+                                                        "修改失败！用户名不能超过10个字！",Toast.LENGTH_SHORT).show();
                                             }else {
                                                 tv_setting_username.setText(edit.getText().toString().trim());
                                             }
@@ -85,7 +90,7 @@ public class AccountSettingActivity extends AppCompatActivity {
                     break;
                 case R.id.rl_setting_phone:
                     Intent intent = new Intent(AccountSettingActivity.this,ChangePhoneActivity.class);
-                    startActivity(intent);
+                    startActivityForResult(intent,20);
                     break;
                 case R.id.rl_setting_wechat:
                     //绑定微信
@@ -93,6 +98,21 @@ public class AccountSettingActivity extends AppCompatActivity {
                 default:
                     break;
             }
+        }
+    }
+
+    //结果处理函数，当从secondActivity中返回时调用此函数
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        System.out.println("onActivtiyResult-requestCode:" +requestCode+",resultCode:" +resultCode);
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 20 && resultCode == RESULT_OK){
+            Bundle bundle = data.getExtras();
+            String text = null;
+            if(bundle != null)
+                text = bundle.getString("phone");
+            System.out.println("phone:"+text);
+            tv_setting_phone.setText(text);
         }
     }
 }
