@@ -47,7 +47,8 @@ public class ChangePhoneActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"请输入正确的手机号",Toast.LENGTH_SHORT).show();
                 }
             }else if(v.getId() == R.id.btn_confirm) {
-                if(et_change_cellphone.getText().toString().trim().length() != 11 || et_change_vcode.getText().toString().trim().equals("")) {
+                if(et_change_cellphone.getText().toString().trim().length() != 11
+                        || et_change_vcode.getText().toString().trim().equals("")) {
                     Toast.makeText(getApplicationContext(),"请输入手机号及验证码",Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -55,7 +56,16 @@ public class ChangePhoneActivity extends AppCompatActivity {
                     tCount.cancel();
                     tCount.onFinish();
                     Toast.makeText(getApplicationContext(),"手机号绑定成功！",Toast.LENGTH_SHORT).show();
-                    ChangePhoneActivity.this.finish();
+                    intent = getIntent();
+                    //这里使用bundle绷带来传输数据
+                    Bundle bundle = new Bundle();
+                    //传输的内容仍然是键值对的形式
+                    bundle.putString("phone", et_change_cellphone.getText().toString().trim());//回发的消息
+                    System.out.println("newphone:"+et_change_cellphone.getText().toString().trim());
+                    intent.putExtras(bundle);
+                    setResult(RESULT_OK, intent);
+                    System.out.println("setResult"+RESULT_OK);
+                    finish();
                 }
 
             }

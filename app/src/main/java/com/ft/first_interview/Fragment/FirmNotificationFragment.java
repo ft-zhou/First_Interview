@@ -17,7 +17,7 @@ import com.ft.first_interview.bean.Message;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotificationFragment extends Fragment {
+public class FirmNotificationFragment extends Fragment {
 
     private ListView messagelist;
     private List<Message> data = new ArrayList<>();
@@ -36,12 +36,8 @@ public class NotificationFragment extends Fragment {
         messagelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-//                TextView choose_company_name = (TextView) messagelist.getChildAt(arg2).findViewById(R.id.tv_company_name);
-//                Toast toast = Toast.makeText(getContext(), choose_company_name.getText().toString(), Toast.LENGTH_SHORT);
-//                toast.setGravity(Gravity.CENTER, 0, 0);
-//                toast.show();
                 Intent intent = new Intent(getContext(), DialogActivity.class);
-                intent.putExtra("username","一面科技有限公司");
+                intent.putExtra("username","张三");
                 startActivity(intent);
             }
         });
@@ -52,7 +48,7 @@ public class NotificationFragment extends Fragment {
     private void initList() {
         for (int i = 0; i < 10; i++) {
             Message item = new Message();
-            item.setUsername("一面科技");
+            item.setUsername("张三");
             item.setUserhead("R.mipmap.ic_launcher_round");
             item.setContent("这里是聊天内容……");
             item.setPosttime("2018/05/01");

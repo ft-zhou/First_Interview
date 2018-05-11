@@ -25,32 +25,30 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private ImageView topImage;
-    private RelativeLayout top_rl;
+//    private ImageView topImage;
+//    private RelativeLayout top_rl;
     private EditText etSearch;
     private ListView joblist;
     private List<Job> data = new ArrayList<>();
 
-    private int mTouchShop;//最小滑动距离
-    protected float mFirstY;//触摸下去的位置
-    protected float mCurrentY;//滑动时Y的位置
-    protected int direction;//判断是否上滑或者下滑的标志
-    protected boolean mShow;//判断是否执行了上滑动画
-    private Animator mAnimator;//动画属性
+//    private int mTouchShop;//最小滑动距离
+//    protected float mFirstY;//触摸下去的位置
+//    protected float mCurrentY;//滑动时Y的位置
+//    protected int direction;//判断是否上滑或者下滑的标志
+//    protected boolean mShow;//判断是否执行了上滑动画
+//    private Animator mAnimator;//动画属性
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container,false);
-        topImage = (ImageView) view.findViewById(R.id.topImage);
+//        topImage = (ImageView) view.findViewById(R.id.topImage);
         etSearch= (EditText) view.findViewById(R.id.etSearch) ;
         etSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),SearchActivity.class));
+                startActivity(new Intent(getActivity(), SearchActivity.class));
             }
         });
-
-
 
         initList();
 
@@ -163,17 +161,17 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private void tolbarAnim(int flag){
-        if(mAnimator != null && mAnimator.isRunning()){//判断动画存在  如果启动了,则先关闭
-            mAnimator.cancel();
-        }
-        if(flag == 0){
-            mAnimator = ObjectAnimator.ofFloat(top_rl, "translationY", top_rl.getTranslationY(),0);//从当前位置位移到0位置
-        }else{
-            mAnimator = ObjectAnimator.ofFloat(top_rl, "translationY", top_rl.getTranslationY(),-top_rl.getHeight());//从当前位置移动到布局负高度的wiz
-        }
-        mAnimator.start();//执行动画
-
-    }
+//    private void tolbarAnim(int flag){
+//        if(mAnimator != null && mAnimator.isRunning()){//判断动画存在  如果启动了,则先关闭
+//            mAnimator.cancel();
+//        }
+//        if(flag == 0){
+//            mAnimator = ObjectAnimator.ofFloat(top_rl, "translationY", top_rl.getTranslationY(),0);//从当前位置位移到0位置
+//        }else{
+//            mAnimator = ObjectAnimator.ofFloat(top_rl, "translationY", top_rl.getTranslationY(),-top_rl.getHeight());//从当前位置移动到布局负高度的wiz
+//        }
+//        mAnimator.start();//执行动画
+//
+//    }
 
 }

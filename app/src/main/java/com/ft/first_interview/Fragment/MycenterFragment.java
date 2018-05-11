@@ -15,13 +15,15 @@ import com.ft.first_interview.Activity.FeedbackActivity;
 import com.ft.first_interview.Activity.InviteActivity;
 import com.ft.first_interview.Activity.ResumeActivity;
 import com.ft.first_interview.Activity.SettingActivity;
+import com.ft.first_interview.Activity.WalletActivity;
 import com.ft.first_interview.R;
 
 public class MycenterFragment extends Fragment {
     RelativeLayout rl_resume;
-    RelativeLayout rl_invite;
     RelativeLayout rl_apply;
     RelativeLayout rl_favorite;
+    RelativeLayout rl_wallet;
+    RelativeLayout rl_invite;
     RelativeLayout rl_feedback;
     RelativeLayout rl_setting;
 
@@ -29,23 +31,25 @@ public class MycenterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mycenter, container, false);
         rl_resume = (RelativeLayout)view.findViewById(R.id.rl_resume);
-        rl_invite = (RelativeLayout)view.findViewById(R.id.rl_invite);
         rl_apply = (RelativeLayout)view.findViewById(R.id.rl_apply);
         rl_favorite = (RelativeLayout)view.findViewById(R.id.rl_favorite);
+        rl_wallet = (RelativeLayout)view.findViewById(R.id.rl_wallet);
+        rl_invite = (RelativeLayout)view.findViewById(R.id.rl_invite);
         rl_feedback = (RelativeLayout)view.findViewById(R.id.rl_feedback);
         rl_setting = (RelativeLayout)view.findViewById(R.id.rl_setting);
 
         rl_resume.setOnClickListener(new MyListener());
-        rl_invite.setOnClickListener(new MyListener());
         rl_apply.setOnClickListener(new MyListener());
         rl_favorite.setOnClickListener(new MyListener());
+        rl_wallet.setOnClickListener(new MyListener());
+        rl_invite.setOnClickListener(new MyListener());
         rl_feedback.setOnClickListener(new MyListener());
         rl_setting.setOnClickListener(new MyListener());
 
         return view;
     }
 
-    public class MyListener implements View.OnClickListener {
+    private class MyListener implements View.OnClickListener {
 
         @Override
         public void onClick(View view) {
@@ -53,14 +57,17 @@ public class MycenterFragment extends Fragment {
                 case R.id.rl_resume:
                     startActivity(new Intent(getActivity(),ResumeActivity.class));
                     break;
-                case R.id.rl_invite:
-                    startActivity(new Intent(getActivity(),InviteActivity.class));
-                    break;
                 case R.id.rl_apply:
                     startActivity(new Intent(getActivity(),ApplyActivity.class));
                     break;
                 case R.id.rl_favorite:
                     startActivity(new Intent(getActivity(),FavoriteActivity.class));
+                    break;
+                case R.id.rl_wallet:
+                    startActivity(new Intent(getActivity(),WalletActivity.class));
+                    break;
+                case R.id.rl_invite:
+                    startActivity(new Intent(getActivity(),InviteActivity.class));
                     break;
                 case R.id.rl_feedback:
                     startActivity(new Intent(getActivity(),FeedbackActivity.class));

@@ -64,9 +64,11 @@ public class LoginActivity extends AppCompatActivity{
                     if (firstlogin) {
                         intent = new Intent(LoginActivity.this,ChoosetypeActivity.class);
                         startActivity(intent);
+                        finish();
                     }else {
                         intent = new Intent(LoginActivity.this,NavigationActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 }
 
@@ -76,9 +78,11 @@ public class LoginActivity extends AppCompatActivity{
                 if (firstlogin) {
                     intent = new Intent(LoginActivity.this,ChoosetypeActivity.class);
                     startActivity(intent);
+                    finish();
                 }else {
                     intent = new Intent(LoginActivity.this,NavigationActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         }

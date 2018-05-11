@@ -3,15 +3,21 @@ package com.ft.first_interview.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.ft.first_interview.PictureSelector.GridViewAdapter;
 import com.ft.first_interview.PictureSelector.PictureSelectorConfig;
 import com.ft.first_interview.PictureSelector.PictureSelectorConstant;
@@ -25,11 +31,17 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.tools.PictureFileUtils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ResumeActivity extends AppCompatActivity {
 
     private Resume resume;
+
+    private int year;   //当前年份
 
     private Switch show_or_hide;
     private EditText et_name;
@@ -37,7 +49,8 @@ public class ResumeActivity extends AppCompatActivity {
     private TextView pv_age;
     private TextView pv_native;
     private TextView pv_address;
-    private EditText et_phone;
+    private RelativeLayout rl_info_phone;
+    private TextView tv_myphone;
     private EditText et_school;
     private EditText et_major;
     private TextView pv_record;
@@ -47,6 +60,12 @@ public class ResumeActivity extends AppCompatActivity {
     private TextView pv_salary;
     private EditText et_certification;
     private EditText et_self;
+
+    private List<String> sexItems = new ArrayList<String>();
+    private List<Integer> ageItems = new ArrayList<Integer>();
+    private List<String> recordItems = new ArrayList<String>();
+    private List<Integer> graduationItems = new ArrayList<Integer>();
+    private List<String> salaryItems = new ArrayList<String>();
 
     private Button btn_submit;
     private Context mContext;
@@ -63,13 +82,16 @@ public class ResumeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume);
 
+        initList();
+
         show_or_hide = (Switch) findViewById(R.id.show_or_hide);
         et_name = (EditText) findViewById(R.id.et_name);
         pv_sex = (TextView) findViewById(R.id.pv_sex);
         pv_age = (TextView) findViewById(R.id.pv_age);
         pv_native = (TextView) findViewById(R.id.pv_native);
         pv_address = (TextView) findViewById(R.id.pv_address);
-        et_phone = (EditText) findViewById(R.id.et_phone);
+        rl_info_phone = (RelativeLayout) findViewById(R.id.rl_info_phone);
+        tv_myphone = (TextView) findViewById(R.id.tv_myphone);
         et_school = (EditText) findViewById(R.id.et_school);
         et_major = (EditText) findViewById(R.id.et_major);
         pv_record = (TextView) findViewById(R.id.pv_record);
@@ -84,6 +106,7 @@ public class ResumeActivity extends AppCompatActivity {
         pv_age.setOnClickListener(new pvListener());
         pv_native.setOnClickListener(new pvListener());
         pv_address.setOnClickListener(new pvListener());
+        rl_info_phone.setOnClickListener(new pvListener());
         pv_record.setOnClickListener(new pvListener());
         pv_graduation.setOnClickListener(new pvListener());
         pv_place.setOnClickListener(new pvListener());
@@ -105,16 +128,143 @@ public class ResumeActivity extends AppCompatActivity {
         initGridView();
     }
 
+    private void initList() {
+        int i;
+        //性别
+        sexItems.add("男");
+        sexItems.add("女");
+        //年龄
+        year = (Integer) Calendar.getInstance().get(Calendar.YEAR);
+        for (i = year-60;i<=year-16;i++) {
+            ageItems.add(i);
+        }
+        //学历
+        recordItems.add("高中及以下");
+        recordItems.add("中技");
+        recordItems.add("中专");
+        recordItems.add("大专");
+        recordItems.add("本科");
+        recordItems.add("硕士");
+        recordItems.add("博士");
+        recordItems.add("MBA");
+        //毕业年份
+        for (i = year-38;i<=year;i++) {
+            graduationItems.add(i);
+        }
+        //薪资
+        salaryItems.add("1500/月 以下");
+        salaryItems.add("1500-2000/月");
+        salaryItems.add("2000-3000/月");
+        salaryItems.add("3000-4500/月");
+        salaryItems.add("4500-6000/月");
+        salaryItems.add("6000-8000/月");
+        salaryItems.add("8000-10000/月");
+        salaryItems.add("10000-15000/月");
+        salaryItems.add("15000-20000/月");
+        salaryItems.add("20000/月 及以上");
+    }
+
     private class pvListener implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
             switch(v.getId()) {
                 case R.id.pv_sex:
-
+                    OptionsPickerView sex_pvOptions = new OptionsPickerBuilder(
+                            ResumeActivity.this, new OnOptionsSelectListener() {
+                        @Override
+                        public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
+                            //返回的分别是三个级别的选中位置
+                            String tx = sexItems.get(options1);
+                            pv_sex.setText(tx);
+                        }
+                    }).setSubmitText("确定")//确定按钮文字
+                            .setCancelText("取消")//取消按钮文字
+                            .setSelectOptions(0)
+                            .build();
+                    sex_pvOptions.setPicker(sexItems);
+                    sex_pvOptions.show();
                     break;
                 case R.id.pv_age:
+                    OptionsPickerView age_pvOptions = new OptionsPickerBuilder(
+                            ResumeActivity.this, new OnOptionsSelectListener() {
+                        @Override
+                        public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
+                            //返回的分别是三个级别的选中位置
+                            int tx = ageItems.get(options1);
+                            pv_age.setText((year-tx));
+                        }
+                    }).setSubmitText("确定")//确定按钮文字
+                            .setCancelText("取消")//取消按钮文字
+                            .setSelectOptions(42)
+                            .build();
+                    age_pvOptions.setPicker(ageItems);
+                    age_pvOptions.show();
+                    break;
+                case R.id.pv_native:
 
+                    break;
+                case R.id.pv_address:
+
+                    break;
+                case R.id.rl_info_phone:
+                    startActivityForResult(new Intent(
+                            ResumeActivity.this,ChangePhoneActivity.class),20);
+                    break;
+                case R.id.pv_record:
+                    OptionsPickerView record_pvOptions = new OptionsPickerBuilder(
+                            ResumeActivity.this, new OnOptionsSelectListener() {
+                        @Override
+                        public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
+                            //返回的分别是三个级别的选中位置
+                            String tx = recordItems.get(options1);
+                            pv_record.setText(tx);
+                        }
+                    }).setSubmitText("确定")//确定按钮文字
+                            .setCancelText("取消")//取消按钮文字
+                            .setSelectOptions(4)
+                            .build();
+                    record_pvOptions.setPicker(recordItems);
+                    record_pvOptions.show();
+                    break;
+                case R.id.pv_graduation:
+                    OptionsPickerView graduation_pvOptions = new OptionsPickerBuilder(
+                            ResumeActivity.this, new OnOptionsSelectListener() {
+                        @Override
+                        public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
+                            //返回的分别是三个级别的选中位置
+                            int tx = graduationItems.get(options1);
+                            pv_graduation.setText(tx+"");
+                        }
+                    }).setSubmitText("确定")//确定按钮文字
+                            .setCancelText("取消")//取消按钮文字
+                            .setSelectOptions(38)
+                            .build();
+                    graduation_pvOptions.setPicker(graduationItems);
+                    graduation_pvOptions.show();
+                    break;
+                case R.id.pv_place:
+
+                    break;
+                case R.id.pv_position:
+
+                    break;
+                case R.id.pv_salary:
+                    OptionsPickerView salary_pvOptions = new OptionsPickerBuilder(
+                            ResumeActivity.this, new OnOptionsSelectListener() {
+                        @Override
+                        public void onOptionsSelect(int options1, int option2, int options3 ,View v) {
+                            //返回的分别是三个级别的选中位置
+                            String tx = salaryItems.get(options1);
+                            pv_salary.setText(tx);
+                        }
+                    }).setSubmitText("确定")//确定按钮文字
+                            .setCancelText("取消")//取消按钮文字
+                            .setSelectOptions(0)
+                            .build();
+                    salary_pvOptions.setPicker(salaryItems);
+                    salary_pvOptions.show();
+                    break;
                 default:
                     break;
             }
@@ -223,6 +373,16 @@ public class ResumeActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 20 && resultCode == RESULT_OK){
+            Bundle bundle = data.getExtras();
+            String text = null;
+            if(bundle != null)
+                text = bundle.getString("phone");
+            System.out.println("phone:"+text);
+            tv_myphone.setText(text);
+        }
+
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case PictureConfig.CHOOSE_REQUEST:
@@ -236,7 +396,8 @@ public class ResumeActivity extends AppCompatActivity {
                     break;
             }
         }
-        if (requestCode == PictureSelectorConstant.REQUEST_CODE_MAIN && resultCode == PictureSelectorConstant.RESULT_CODE_VIEW_IMG) {
+        if (requestCode == PictureSelectorConstant.REQUEST_CODE_MAIN
+                && resultCode == PictureSelectorConstant.RESULT_CODE_VIEW_IMG) {
             //查看大图页面删除了图片
             ArrayList<String> toDeletePicList = data.getStringArrayListExtra(PictureSelectorConstant.IMG_LIST); //要删除的图片的集合
             if(al == mPicList) {
@@ -271,7 +432,7 @@ public class ResumeActivity extends AppCompatActivity {
         nativeadd.setCity(saddlist[1]);
         nativeadd.setDistrict(saddlist[2]);
         resume.setAddress(nativeadd);
-        resume.setPhone(et_phone.getText().toString());
+        resume.setPhone(tv_myphone.getText().toString());
         resume.setSchool(et_school.getText().toString());
         resume.setMajor(et_major.getText().toString());
         resume.setRecord(pv_record.getText().toString());

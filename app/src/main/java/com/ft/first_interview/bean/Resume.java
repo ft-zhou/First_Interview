@@ -22,6 +22,17 @@ public class Resume {
     private String self;
     private ArrayList<String> imgUrlList;
     private String videlUrl;
+    private String posttime;
+
+    private String workplace;
+
+    public String getWorkplace() {
+        return workplace;
+    }
+
+    public void setWorkplace(String workplace) {
+        this.workplace = workplace;
+    }
 
     public Boolean getShow_or_hide() {
         return show_or_hide;
@@ -165,5 +176,13 @@ public class Resume {
 
     public void setVidelUrl(String videlUrl) {
         this.videlUrl = videlUrl;
+    }
+
+    public String getPosttime() {
+        return posttime;
+    }
+
+    public void setPosttime(String posttime) {
+        this.posttime = posttime;
     }
 }

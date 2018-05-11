@@ -33,8 +33,8 @@ public class ChoosetypeActivity extends AppCompatActivity {
                 intent = new Intent(ChoosetypeActivity.this,NavigationActivity.class);
                 startActivity(intent);
             }else if(v.getId() == R.id.btn_type_company) {
-//                intent = new Intent(ChoosetypeActivity.this,NavigationActivity.class);
-//                startActivity(intent);
+                intent = new Intent(ChoosetypeActivity.this,FirmNavigationActivity.class);
+                startActivity(intent);
             }
         }
     }

@@ -7,6 +7,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activity.NavigationActivity"
+            android:name=".Activity.LoginActivity"
+            android:label="用户登录"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,17 +29,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".Activity.NavigationActivity"/> -->
-        <activity
-            android:name=".Activity.JobDetailActivity"
-            android:label="招聘信息详情" />
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/app_name" />
         <activity
+            android:name=".Activity.ChoosetypeActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Activity.NavigationActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.SearchActivity"
+            android:label="搜索"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.JobDetailActivity"
+            android:label="招聘信息详情" />
+        <activity
+            android:name=".Activity.CompanyInformation"
+            android:label="公司信息" />
+        <activity android:name=".Activity.DialogActivity" />
+        <activity
             android:name=".Activity.ResumeActivity"
             android:label="我的简历"
             android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".PictureSelector.PlusImageActivity" />
         <activity
             android:name=".Activity.ApplyActivity"
             android:label="我的应聘申请" />
@@ -41,17 +62,52 @@
             android:name=".Activity.FavoriteActivity"
             android:label="我的收藏" />
         <activity
+            android:name=".Activity.WalletActivity"
+            android:label="我的钱包" />
+        <activity
+            android:name=".Activity.InviteActivity"
+            android:label="我的邀请" />
+        <activity
             android:name=".Activity.FeedbackActivity"
             android:label="用户反馈"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".Activity.SettingActivity"
             android:label="设置" />
-        <activity android:name=".Activity.DialogActivity" />
-        <activity android:name=".PictureSelector.PlusImageActivity" />
         <activity
-            android:name=".Activity.CompanyInformation"
-            android:label="公司信息" />
+            android:name=".Activity.AccountSettingActivity"
+            android:label="账户设置" />
+        <activity
+            android:name=".Activity.AgreementActivity"
+            android:label="用户协议" />
+        <activity
+            android:name=".Activity.AboutActivity"
+            android:label="关于" />
+        <activity
+            android:name=".Activity.ChangePhoneActivity"
+            android:label="绑定手机号" />
+        <activity
+            android:name=".Activity.FirmNavigationActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".Activity.FirmResumeDetailActivity"
+            android:label="简历信息详情"/>
+        <activity
+            android:name=".Activity.FirmCompanyActivity"
+            android:label="我的公司"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.FirmRecruitActivity"
+            android:label="我的招聘" />
+        <activity android:name=".Activity.FirmPublishActivity"
+            android:label="发布招聘信息"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.FirmReceiveActivity"
+            android:label="收到的简历" />
+        <activity
+            android:name=".Activity.FirmFavoriteActivity"
+            android:label="我的收藏" />
 
         <!-- 适配android6.0以上拍照问题 -->
         <provider
@@ -64,7 +120,6 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".Activity.InviteActivity"></activity>
     </application>
 
 </manifest>

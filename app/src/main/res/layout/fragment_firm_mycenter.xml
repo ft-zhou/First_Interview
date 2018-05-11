@@ -11,7 +11,7 @@
             android:layout_height="150dp"
             android:background="@color/colorPrimary">
             <ImageView
-                android:id="@+id/user_head"
+                android:id="@+id/firm_user_head"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
@@ -25,53 +25,53 @@
                 android:orientation="horizontal"
                 android:layout_marginBottom="20dp">
                 <TextView
-                    android:id="@+id/user_name"
+                    android:id="@+id/firm_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:textSize="18sp"
                     android:textColor="@color/white"
-                    android:text="刘圣佳"/>
+                    android:text="一面科技"/>
                 <TextView
-                    android:id="@+id/user_type"
+                    android:id="@+id/firm_user_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:padding="2dp"
                     android:layout_marginBottom="1dp"
-                    android:layout_toRightOf="@id/user_name"
-                    android:layout_alignBottom="@id/user_name"
-                    android:background="@color/textbg"
+                    android:layout_toRightOf="@id/firm_user_name"
+                    android:layout_alignBottom="@id/firm_user_name"
+                    android:background="@color/bg"
                     android:textSize="12sp"
                     android:textColor="@color/white"
-                    android:text="个人"/>
+                    android:text="企业"/>
             </RelativeLayout>
         </RelativeLayout>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="5dp" />
         <RelativeLayout
-            android:id="@+id/rl_resume"
+            android:id="@+id/rl_firm_company"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:background="@color/white">
             <ImageView
-                android:id="@+id/icon_resume"
+                android:id="@+id/icon_firm_company"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/resume"/>
+                android:src="@drawable/company"/>
             <TextView
-                android:id="@+id/mycenter_resume"
+                android:id="@+id/mycenter_firm_company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_resume"
+                android:layout_toRightOf="@id/icon_firm_company"
                 android:textSize="16sp"
-                android:text="我的简历" />
+                android:text="我的公司" />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -83,27 +83,27 @@
             android:layout_width="match_parent"
             android:layout_height="1dp" />
         <RelativeLayout
-            android:id="@+id/rl_apply"
+            android:id="@+id/rl_firm_recruit"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:background="@color/white">
             <ImageView
-                android:id="@+id/icon_apply"
+                android:id="@+id/icon_firm_recruit"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/apply"/>
+                android:src="@drawable/recruit"/>
             <TextView
-                android:id="@+id/mycenter_apply"
+                android:id="@+id/mycenter_firm_recruit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_apply"
+                android:layout_toRightOf="@id/icon_firm_recruit"
                 android:textSize="16sp"
-                android:text="我的应聘申请" />
+                android:text="我的招聘信息" />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -115,25 +115,57 @@
             android:layout_width="match_parent"
             android:layout_height="1dp" />
         <RelativeLayout
-            android:id="@+id/rl_favorite"
+            android:id="@+id/rl_firm_receive"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:background="@color/white">
             <ImageView
-                android:id="@+id/icon_favorite"
+                android:id="@+id/icon_firm_receive"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/receive"/>
+            <TextView
+                android:id="@+id/mycenter_firm_receive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/icon_firm_receive"
+                android:textSize="16sp"
+                android:text="收到的简历" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/right"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <RelativeLayout
+            android:id="@+id/rl_firm_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:padding="10dp"
+            android:background="@color/white">
+            <ImageView
+                android:id="@+id/icon_firm_favorite"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
                 android:src="@drawable/favorite"/>
             <TextView
-                android:id="@+id/mycenter_favorite"
+                android:id="@+id/mycenter_firm_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_favorite"
+                android:layout_toRightOf="@id/icon_firm_favorite"
                 android:textSize="16sp"
                 android:text="我的收藏" />
             <ImageView
@@ -147,25 +179,25 @@
             android:layout_width="match_parent"
             android:layout_height="5dp" />
         <RelativeLayout
-            android:id="@+id/rl_wallet"
+            android:id="@+id/rl_firm_wallet"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:background="@color/white">
             <ImageView
-                android:id="@+id/icon_wallet"
+                android:id="@+id/icon_firm_wallet"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
                 android:src="@drawable/wallet"/>
             <TextView
-                android:id="@+id/mycenter_wallet"
+                android:id="@+id/mycenter_firm_wallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_wallet"
+                android:layout_toRightOf="@id/icon_firm_wallet"
                 android:textSize="16sp"
                 android:text="我的钱包" />
             <ImageView
@@ -177,59 +209,27 @@
         </RelativeLayout>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
-        <RelativeLayout
-            android:id="@+id/rl_invite"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:padding="10dp"
-            android:background="@color/white">
-            <ImageView
-                android:id="@+id/icon_invite"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginLeft="15dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/invite"/>
-            <TextView
-                android:id="@+id/mycenter_invite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_invite"
-                android:textSize="16sp"
-                android:text="我的邀请" />
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/right"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"/>
-        </RelativeLayout>
-        <ImageView
-            android:layout_width="match_parent"
             android:layout_height="5dp" />
         <RelativeLayout
-            android:id="@+id/rl_feedback"
+            android:id="@+id/rl_firm_feedback"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:background="@color/white">
             <ImageView
-                android:id="@+id/icon_feedback"
+                android:id="@+id/icon_firm_feedback"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
                 android:src="@drawable/feedback"/>
             <TextView
-                android:id="@+id/mycenter_feedback"
+                android:id="@+id/mycenter_firm_feedback"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_feedback"
+                android:layout_toRightOf="@id/icon_firm_feedback"
                 android:textSize="16sp"
                 android:text="用户反馈" />
             <ImageView
@@ -243,25 +243,25 @@
             android:layout_width="match_parent"
             android:layout_height="1dp" />
         <RelativeLayout
-            android:id="@+id/rl_setting"
+            android:id="@+id/rl_firm_setting"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:background="@color/white">
             <ImageView
-                android:id="@+id/icon_setting"
+                android:id="@+id/icon_firm_setting"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
                 android:src="@drawable/setting"/>
             <TextView
-                android:id="@+id/mycenter_setting"
+                android:id="@+id/mycenter_firm_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/icon_setting"
+                android:layout_toRightOf="@id/icon_firm_setting"
                 android:textSize="16sp"
                 android:text="设置" />
             <ImageView

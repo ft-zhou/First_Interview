@@ -293,21 +293,21 @@
                     android:textColor="@color/red"
                     android:textSize="16sp"
                     android:text="*"/>
-                <EditText
-                    android:id="@+id/et_phone"
+                <TextView
+                    android:id="@+id/tv_myphone"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/right_icon_phone"
-                    android:background="@null"
+                    android:layout_centerVertical="true"
                     android:textSize="14sp"
-                    android:hint="请填写您的联系电话"/>
+                    android:text="13799912382"/>
                 <ImageView
                     android:id="@+id/right_icon_phone"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/right"/>
             </RelativeLayout>
         </LinearLayout>
         <ImageView
@@ -679,7 +679,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:textSize="16sp"
-                    android:text="自我介绍"/>
+                    android:text="自我评价"/>
                 <EditText
                     android:id="@+id/et_self"
                     android:layout_width="match_parent"
@@ -692,7 +692,7 @@
                     android:gravity="top"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:hint="请介绍一下您自己（不超过200字）"/>
+                    android:hint="请填写对自己的简短评价，简明扼要的说明个人优势（不超过200字）"/>
             </RelativeLayout>
             <ImageView
                 android:layout_width="match_parent"
