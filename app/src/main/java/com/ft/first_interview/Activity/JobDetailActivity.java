@@ -1,9 +1,13 @@
 package com.ft.first_interview.Activity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -55,15 +59,14 @@ public class JobDetailActivity extends AppCompatActivity {
                         toast = Toast.makeText(getApplicationContext(), "收藏成功！", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
-                        break;
                     }
                     else{
                         btn_job_favorite.setText("收藏");
                         toast = Toast.makeText(getApplicationContext(), "已取消收藏！", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
-                        break;
                     }
+                    break;
                 case R.id.btn_job_delivery:
                     toast = Toast.makeText(getApplicationContext(), "简历投递成功！", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);

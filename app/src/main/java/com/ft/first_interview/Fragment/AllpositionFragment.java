@@ -49,10 +49,10 @@ public class AllpositionFragment extends Fragment {
     private void initList() {
         for (int i = 0; i < 10; i++) {
             Job item = new Job();
-            item.setCompany("一面科技");
+            item.setCompanyname("一面科技");
             item.setJob_title("Android开发工程师");
             item.setJob_place("上海-闵行区");
-            item.setJob_salary("8000～10000/月");
+            item.setJob_salary("8000-10000/月");
             item.setPosttime("5分钟前");
             ArrayList<String> tag = new ArrayList<>();
             tag.add("五险一金");

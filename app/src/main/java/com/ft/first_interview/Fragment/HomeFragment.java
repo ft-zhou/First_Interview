@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
         joblist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                Intent intent=new Intent(getContext(), JobDetailActivity.class);
+                Intent intent = new Intent(getContext(), JobDetailActivity.class);
                 startActivity(intent);
             }
         });
@@ -148,10 +148,10 @@ public class HomeFragment extends Fragment {
     private void initList() {
         for (int i = 0; i < 10; i++) {
             Job item = new Job();
-            item.setCompany("一面科技");
+            item.setCompanyname("一面科技");
             item.setJob_title("Android开发工程师");
             item.setJob_place("上海-闵行区");
-            item.setJob_salary("8000～10000/月");
+            item.setJob_salary("8000-10000/月");
             item.setPosttime("5分钟前");
             ArrayList<String> tag = new ArrayList<>();
             tag.add("五险一金");

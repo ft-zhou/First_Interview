@@ -14,4 +14,6 @@
     <color name="t">#f2f1f1</color>
     <color name="textbg">#FF8C00</color>
     <color name="darkgray">#808080</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

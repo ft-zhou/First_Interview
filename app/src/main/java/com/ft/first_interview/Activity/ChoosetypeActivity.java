@@ -17,6 +17,7 @@ public class ChoosetypeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choosetype);
+        getSupportActionBar().hide();
 
         btn_type_person = (Button) findViewById(R.id.btn_type_person);
         btn_type_company = (Button) findViewById(R.id.btn_type_company);
@@ -32,9 +33,11 @@ public class ChoosetypeActivity extends AppCompatActivity {
             if(v.getId() == R.id.btn_type_person) {
                 intent = new Intent(ChoosetypeActivity.this,NavigationActivity.class);
                 startActivity(intent);
+                finish();
             }else if(v.getId() == R.id.btn_type_company) {
                 intent = new Intent(ChoosetypeActivity.this,FirmNavigationActivity.class);
                 startActivity(intent);
+                finish();
             }
         }
     }

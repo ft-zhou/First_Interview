@@ -27,6 +27,7 @@ public class PlusImageActivity extends AppCompatActivity implements ViewPager.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plus_image);
+        getSupportActionBar().hide();
 
         imgList = getIntent().getStringArrayListExtra(PictureSelectorConstant.IMG_LIST);
         mPosition = getIntent().getIntExtra(PictureSelectorConstant.POSITION, 0);

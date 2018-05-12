@@ -28,17 +28,19 @@ public class ResumeItemAdapter extends ArrayAdapter<Resume> {
         Resume item = getItem(position);
         View view = LayoutInflater.from(getContext()).inflate(layoutId, parent, false);
 
-        TextView title = (TextView) view.findViewById(R.id.recruitlistitem_name);
-        title.setText(item.getName());
-        TextView posit = (TextView) view.findViewById(R.id.recruitlistitem_position);
-        posit.setText(item.getPosition());
+        TextView name = (TextView) view.findViewById(R.id.recruitlistitem_name);
+        name.setText(item.getName());
+        TextView age = (TextView) view.findViewById(R.id.recruitlistitem_age);
+        age.setText(item.getAge());
+        TextView posit = (TextView) view.findViewById(R.id.recruitlistitem_detailposition);
+        posit.setText(item.getDetailposition());
         TextView salary = (TextView) view.findViewById(R.id.recruitlistitem_salary);
         salary.setText(item.getSalary());
         TextView place = (TextView) view.findViewById(R.id.recruitlistitem_place);
         place.setText(item.getWorkplace());
         TextView tag = (TextView) view.findViewById(R.id.recruitlistitem_tag);
         String s = null;
-        s = item.getAge()+" | "+item.getRecord()+" | " +item.getGraduation();
+        s = item.getMajor()+" | "+item.getRecord()+" | " +item.getGraduation();
         tag.setText(s);
         TextView posttime = (TextView) view.findViewById(R.id.recruitlistitem_time);
         posttime.setText(item.getPosttime());

@@ -1,20 +1,18 @@
 package com.ft.first_interview.Activity;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.ft.first_interview.Fragment.FirmHomeFragment;
 import com.ft.first_interview.Fragment.FirmMycenterFragment;
 import com.ft.first_interview.Fragment.FirmNotificationFragment;
-import com.ft.first_interview.Fragment.HomeFragment;
-import com.ft.first_interview.Fragment.MycenterFragment;
-import com.ft.first_interview.Fragment.NotificationFragment;
 import com.ft.first_interview.R;
 
 public class FirmNavigationActivity extends AppCompatActivity {
@@ -27,15 +25,18 @@ public class FirmNavigationActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.firm_navigation_home:
                     setTitle(R.string.app_name);
                     changeFragment(new FirmHomeFragment());
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.firm_navigation_publish:
+                    startActivity(new Intent(FirmNavigationActivity.this,FirmPublishActivity.class));
+                    return true;
+                case R.id.firm_navigation_notifications:
                     setTitle(R.string.title_notifications);
                     changeFragment(new FirmNotificationFragment());
                     return true;
-                case R.id.navigation_mycenter:
+                case R.id.firm_navigation_mycenter:
                     setTitle(R.string.title_mycenter);
                     changeFragment(new FirmMycenterFragment());
                     return true;

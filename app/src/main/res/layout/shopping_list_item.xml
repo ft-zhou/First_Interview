@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/shopplistitem_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shopping_image"/>
+
+    <TextView
+        android:id="@+id/shoppinglistitem_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/shopplistitem_image"
+        android:layout_marginLeft="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="西服套装男三件套商务职业正装修身西装男士"/>
+
+    <ImageView
+        android:id="@+id/shopplistitem_rmb"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@id/shopplistitem_image"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@id/shopplistitem_image"
+        android:tint="@color/textbg"
+        android:src="@drawable/rmb"/>
+
+    <TextView
+        android:id="@+id/shoppinglistitem_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/shopplistitem_rmb"
+        android:layout_alignBottom="@id/shopplistitem_rmb"
+        android:textColor="@color/textbg"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="161"/>
+
+    <TextView
+        android:id="@+id/shoppinglistitem_num"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/shoppinglistitem_price"
+        android:layout_alignBottom="@id/shoppinglistitem_price"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp"
+        android:text="已有666个人参团"/>
+
+
+</RelativeLayout>

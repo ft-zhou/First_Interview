@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import com.ft.first_interview.Activity.ApplyActivity;
 import com.ft.first_interview.Activity.FavoriteActivity;
 import com.ft.first_interview.Activity.FeedbackActivity;
+import com.ft.first_interview.Activity.FirmBuyActivity;
 import com.ft.first_interview.Activity.FirmCompanyActivity;
 import com.ft.first_interview.Activity.FirmFavoriteActivity;
 import com.ft.first_interview.Activity.FirmReceiveActivity;
@@ -25,6 +26,7 @@ import com.ft.first_interview.R;
 public class FirmMycenterFragment extends Fragment {
     RelativeLayout rl_firm_company;
     RelativeLayout rl_firm_recruit;
+    RelativeLayout rl_firm_buy;
     RelativeLayout rl_firm_receive;
     RelativeLayout rl_firm_favorite;
     RelativeLayout rl_firm_wallet;
@@ -36,6 +38,7 @@ public class FirmMycenterFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_firm_mycenter, container, false);
         rl_firm_company = (RelativeLayout)view.findViewById(R.id.rl_firm_company);
         rl_firm_recruit = (RelativeLayout)view.findViewById(R.id.rl_firm_recruit);
+        rl_firm_buy = (RelativeLayout)view.findViewById(R.id.rl_firm_buy);
         rl_firm_receive = (RelativeLayout)view.findViewById(R.id.rl_firm_receive);
         rl_firm_favorite = (RelativeLayout)view.findViewById(R.id.rl_firm_favorite);
         rl_firm_wallet = (RelativeLayout)view.findViewById(R.id.rl_firm_wallet);
@@ -44,6 +47,7 @@ public class FirmMycenterFragment extends Fragment {
 
         rl_firm_company.setOnClickListener(new MyFirmListener());
         rl_firm_recruit.setOnClickListener(new MyFirmListener());
+        rl_firm_buy.setOnClickListener(new MyFirmListener());
         rl_firm_receive.setOnClickListener(new MyFirmListener());
         rl_firm_favorite.setOnClickListener(new MyFirmListener());
         rl_firm_wallet.setOnClickListener(new MyFirmListener());
@@ -63,6 +67,9 @@ public class FirmMycenterFragment extends Fragment {
                     break;
                 case R.id.rl_firm_recruit:
                     startActivity(new Intent(getActivity(),FirmRecruitActivity.class));
+                    break;
+                case R.id.rl_firm_buy:
+                    startActivity(new Intent(getActivity(),FirmBuyActivity.class));
                     break;
                 case R.id.rl_firm_receive:
                     startActivity(new Intent(getActivity(),FirmReceiveActivity.class));

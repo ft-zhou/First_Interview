@@ -65,13 +65,14 @@ public class FirmHomeFragment extends Fragment {
         for (int i = 0; i < 10; i++) {
             Resume item = new Resume();
             item.setName("王先生");
-            item.setPosition("Android开发工程师");
+            item.setDetailposition("Android开发工程师");
             item.setWorkplace("上海");
-            item.setSalary("8000～10000/月");
+            item.setSalary("8000-10000/月");
             item.setPosttime("5分钟前");
             item.setAge("22岁");
             item.setRecord("本科");
             item.setGraduation("应届毕业生");
+            item.setMajor("软件工程");
             data.add(item);
         }
     }

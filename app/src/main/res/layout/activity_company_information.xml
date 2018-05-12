@@ -63,7 +63,7 @@
                                 android:maxLines="1"
                                 android:ellipsize="end"
                                 android:textSize="14sp"
-                                android:text="民营"/>
+                                android:text="私营"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_weight="3"
@@ -101,7 +101,7 @@
                                 android:maxLines="1"
                                 android:ellipsize="end"
                                 android:textSize="14sp"
-                                android:text="互联网"/>
+                                android:text="科技"/>
                         </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>

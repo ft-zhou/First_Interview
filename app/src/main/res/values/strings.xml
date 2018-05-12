@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">一面</string>
     <string name="title_home">首页</string>
-    <string name="title_mycenter">个人中心</string>
+    <string name="title_shopping">团购</string>
+    <string name="title_publish">发布信息</string>
     <string name="title_notifications">消息</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_activity_login">用户登录</string>
+    <string name="title_mycenter">个人中心</string>
     <string name="version">v 1.0.0</string>
+
+    <string name="title_activity_video_interview">VideoInterviewActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -32,7 +32,7 @@ public class JobItemAdapter extends ArrayAdapter<Job> {
         TextView title = (TextView) view.findViewById(R.id.joblistitem_title);
         title.setText(item.getJob_title());
         TextView company = (TextView) view.findViewById(R.id.joblistitem_company);
-        company.setText(item.getCompany());
+        company.setText(item.getCompanyname());
         TextView salary = (TextView) view.findViewById(R.id.joblistitem_salary);
         salary.setText(item.getJob_salary());
         TextView place = (TextView) view.findViewById(R.id.joblistitem_place);

@@ -28,8 +28,7 @@ public class IntroductionFragment extends Fragment {
         ll_iv_horizontal = (LinearLayout) view.findViewById(R.id.ll_iv_horizontal);
         mInflater = LayoutInflater.from(getContext());
 
-        for (int i = 0; i < mImgIds.length; i++)
-        {
+        for (int i = 0; i < mImgIds.length; i++) {
 
             View v = mInflater.inflate(R.layout.horizontal_image_item, ll_iv_horizontal, false);
             ImageView img = (ImageView) v.findViewById(R.id.iv_company_image);

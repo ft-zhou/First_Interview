@@ -16,18 +16,17 @@ import java.util.Map;
 
 public class SearchActivity extends AppCompatActivity{
 
-    private EditText etSearch;
-    private ImageView ivDelete;
-    private GridView gv_search_tips;
+    private EditText search_etSearch;
+    private ImageView search_ivDelete;
+    private GridView search_tips_gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        etSearch = (EditText) findViewById(R.id.etSearch);
-        ivDelete = (ImageView) findViewById(R.id.ivDelete);
-        gv_search_tips = (GridView) findViewById(R.id.gv_search_tips);
-
+        search_etSearch = (EditText) findViewById(R.id.search_etSearch);
+        search_ivDelete = (ImageView) findViewById(R.id.search_ivDelete);
+        search_tips_gridView = (GridView) findViewById(R.id.search_tips_gridView);
     }
 }

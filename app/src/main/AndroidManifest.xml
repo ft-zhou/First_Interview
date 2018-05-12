@@ -49,7 +49,12 @@
         <activity
             android:name=".Activity.CompanyInformation"
             android:label="公司信息" />
-        <activity android:name=".Activity.DialogActivity" />
+        <activity
+            android:name=".Activity.GoodsDetailActivity"
+            android:label="商品详情" />
+        <activity
+            android:name=".Activity.DialogActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".Activity.ResumeActivity"
             android:label="我的简历"
@@ -90,8 +95,16 @@
             android:name=".Activity.FirmNavigationActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".Activity.FirmResumeDetailActivity"
-            android:label="简历信息详情"/>
+        <activity
+            android:name=".Activity.FirmResumeDetailActivity"
+            android:label="简历信息详情" />
+        <activity
+            android:name=".Activity.FirmPublishActivity"
+            android:label="发布招聘信息"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.FirmDialogActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".Activity.FirmCompanyActivity"
             android:label="我的公司"
@@ -99,9 +112,9 @@
         <activity
             android:name=".Activity.FirmRecruitActivity"
             android:label="我的招聘" />
-        <activity android:name=".Activity.FirmPublishActivity"
-            android:label="发布招聘信息"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".Activity.FirmBuyActivity"
+            android:label="我购买的简历" />
         <activity
             android:name=".Activity.FirmReceiveActivity"
             android:label="收到的简历" />
@@ -120,6 +133,11 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <activity
+            android:name=".Activity.VideoInterviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_video_interview"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.ft.first_interview.Activity.DialogActivity;
+import com.ft.first_interview.Activity.FirmDialogActivity;
 import com.ft.first_interview.Adapter.MessageItemAdapter;
 import com.ft.first_interview.R;
 import com.ft.first_interview.bean.Message;
@@ -36,7 +37,7 @@ public class FirmNotificationFragment extends Fragment {
         messagelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                Intent intent = new Intent(getContext(), DialogActivity.class);
+                Intent intent = new Intent(getContext(), FirmDialogActivity.class);
                 intent.putExtra("username","张三");
                 startActivity(intent);
             }

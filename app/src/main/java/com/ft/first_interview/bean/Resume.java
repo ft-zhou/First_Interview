@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Resume {
     private Boolean show_or_hide;
+    private String invitecode;
     private String name;
     private String sex;
     private String age;
@@ -16,7 +17,8 @@ public class Resume {
     private String record;
     private String graduation;
     private P_C_D place;
-    private String position;
+    private String[] position;
+    private String detailposition;
     private String salary;
     private String certification;
     private String self;
@@ -40,6 +42,14 @@ public class Resume {
 
     public void setShow_or_hide(Boolean show_or_hide) {
         this.show_or_hide = show_or_hide;
+    }
+
+    public String getInvitecode() {
+        return invitecode;
+    }
+
+    public void setInvitecode(String invitecode) {
+        this.invitecode = invitecode;
     }
 
     public String getName() {
@@ -130,12 +140,20 @@ public class Resume {
         this.place = place;
     }
 
-    public String getPosition() {
+    public String[] getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(String[] position) {
         this.position = position;
+    }
+
+    public String getDetailposition() {
+        return detailposition;
+    }
+
+    public void setDetailposition(String position) {
+        this.detailposition = position;
     }
 
     public String getSalary() {

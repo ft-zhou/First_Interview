@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.ft.first_interview.Fragment.HomeFragment;
 import com.ft.first_interview.Fragment.MycenterFragment;
 import com.ft.first_interview.Fragment.NotificationFragment;
+import com.ft.first_interview.Fragment.ShoppingFragment;
 import com.ft.first_interview.R;
 
 public class NavigationActivity extends AppCompatActivity {
@@ -28,6 +29,10 @@ public class NavigationActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     setTitle(R.string.app_name);
                     changeFragment(new HomeFragment());
+                    return true;
+                case R.id.navigation_shopping:
+                    setTitle(R.string.title_shopping);
+                    changeFragment(new ShoppingFragment());
                     return true;
                 case R.id.navigation_notifications:
                     setTitle(R.string.title_notifications);
@@ -47,7 +52,6 @@ public class NavigationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-//        setCustomActionBar();
 
         mFragmentManager = getSupportFragmentManager();
         changeFragment(new HomeFragment());
@@ -61,16 +65,4 @@ public class NavigationActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_content, fragment);
         fragmentTransaction.commit();
     }
-
-//    private void setCustomActionBar() {
-//        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-//        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_layout, null);
-//        ActionBar actionBar = getActionBar();
-//        actionBar.setCustomView(mActionBarView, lp);
-//        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        actionBar.setDisplayShowCustomEnabled(true);
-//        actionBar.setDisplayShowHomeEnabled(false);
-//        actionBar.setDisplayShowTitleEnabled(false);
-//    }
-
 }
