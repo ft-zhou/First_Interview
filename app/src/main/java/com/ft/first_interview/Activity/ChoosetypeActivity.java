@@ -17,7 +17,6 @@ public class ChoosetypeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choosetype);
-        getSupportActionBar().hide();
 
         btn_type_person = (Button) findViewById(R.id.btn_type_person);
         btn_type_company = (Button) findViewById(R.id.btn_type_company);

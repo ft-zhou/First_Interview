@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Job {
     private Company company;
+    private Boolean show_or_hide;
     private String companyname;
     private String job_title;
     private String job_position;
@@ -16,7 +17,6 @@ public class Job {
     public String getCompanyname() {
         return companyname;
     }
-
     public void setCompanyname(String companyname) {
         this.companyname = companyname;
     }
@@ -24,22 +24,26 @@ public class Job {
     public Company getCompany() {
         return company;
     }
-
     public void setCompany(Company company) {
         this.company = company;
     }
 
-    public String getJob_title() {return job_title;}
-    public void setJob_title(String job_title) {this.job_title = job_title;}
-
-    public void setJob_position(String job_position) {
-        this.job_position = job_position;
+    public Boolean getShow_or_hide() {
+        return show_or_hide;
     }
 
+    public void setShow_or_hide(Boolean show_or_hide) {
+        this.show_or_hide = show_or_hide;
+    }
+
+    public String getJob_title() {return job_title;}
+    public void setJob_title(String job_title) {this.job_title = job_title;}
     public String getJob_position() {
         return job_position;
     }
-
+    public void setJob_position(String job_position) {
+        this.job_position = job_position;
+    }
     public String getJob_place() {return job_place;}
     public void setJob_place(String job_place) {this.job_place = job_place;}
     public String getJob_salary() {return job_salary;}

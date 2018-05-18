@@ -160,7 +160,7 @@
                     android:src="@drawable/right"/>
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/rl_apply_age"
+                android:id="@+id/rl_info_age"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:layout_margin="5dp">
@@ -196,7 +196,7 @@
                     android:src="@drawable/right"/>
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/rl_apply_native"
+                android:id="@+id/rl_info_native"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:layout_margin="5dp">
@@ -365,7 +365,6 @@
                     android:layout_centerVertical="true"/>
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/rl_edu_major"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:layout_margin="5dp">
@@ -569,7 +568,6 @@
                     android:src="@drawable/right"/>
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/rl_apply_detailposition"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:layout_margin="5dp">

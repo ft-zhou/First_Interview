@@ -42,19 +42,28 @@ public class ResumeActivity extends AppCompatActivity {
     private Switch show_or_hide;
     private EditText et_invitecode;
     private EditText et_name;
+    private RelativeLayout rl_info_sex;
     private TextView pv_sex;
+    private RelativeLayout rl_info_age;
     private TextView pv_age;
+    private RelativeLayout rl_info_native;
     private TextView pv_native;
+    private RelativeLayout rl_info_address;
     private TextView pv_address;
     private RelativeLayout rl_info_phone;
     private TextView tv_myphone;
     private EditText et_school;
     private EditText et_major;
+    private RelativeLayout rl_edu_record;
     private TextView pv_record;
+    private RelativeLayout rl_edu_graduation;
     private TextView pv_graduation;
+    private RelativeLayout rl_apply_place;
     private TextView pv_place;
+    private RelativeLayout rl_apply_position;
     private TextView pv_position;
     private TextView et_detailposition;
+    private RelativeLayout rl_apply_salary;
     private TextView pv_salary;
     private EditText et_certification;
     private EditText et_self;
@@ -92,33 +101,42 @@ public class ResumeActivity extends AppCompatActivity {
         et_invitecode = (EditText) findViewById(R.id.et_invitecode);
 
         et_name = (EditText) findViewById(R.id.et_name);
+        rl_info_sex = (RelativeLayout) findViewById(R.id.rl_info_sex);
         pv_sex = (TextView) findViewById(R.id.pv_sex);
+        rl_info_age = (RelativeLayout) findViewById(R.id.rl_info_age);
         pv_age = (TextView) findViewById(R.id.pv_age);
+        rl_info_native = (RelativeLayout) findViewById(R.id.rl_info_native);
         pv_native = (TextView) findViewById(R.id.pv_native);
+        rl_info_address = (RelativeLayout) findViewById(R.id.rl_info_address);
         pv_address = (TextView) findViewById(R.id.pv_address);
         rl_info_phone = (RelativeLayout) findViewById(R.id.rl_info_phone);
         tv_myphone = (TextView) findViewById(R.id.tv_myphone);
         et_school = (EditText) findViewById(R.id.et_school);
         et_major = (EditText) findViewById(R.id.et_major);
+        rl_edu_record = (RelativeLayout) findViewById(R.id.rl_edu_record);
         pv_record = (TextView) findViewById(R.id.pv_record);
+        rl_edu_graduation = (RelativeLayout) findViewById(R.id.rl_edu_graduation);
         pv_graduation = (TextView) findViewById(R.id.pv_graduation);
+        rl_apply_place = (RelativeLayout) findViewById(R.id.rl_apply_place);
         pv_place = (TextView) findViewById(R.id.pv_place);
+        rl_apply_position = (RelativeLayout) findViewById(R.id.rl_apply_position);
         pv_position = (TextView) findViewById(R.id.pv_position);
         et_detailposition = (TextView) findViewById(R.id.et_detailposition);
+        rl_apply_salary = (RelativeLayout) findViewById(R.id.rl_apply_salary);
         pv_salary = (TextView) findViewById(R.id.pv_salary);
         et_certification = (EditText) findViewById(R.id.et_certification);
         et_self = (EditText) findViewById(R.id.et_self);
 
-        pv_sex.setOnClickListener(new pvListener());
-        pv_age.setOnClickListener(new pvListener());
-        pv_native.setOnClickListener(new pvListener());
-        pv_address.setOnClickListener(new pvListener());
+        rl_info_sex.setOnClickListener(new pvListener());
+        rl_info_age.setOnClickListener(new pvListener());
+        rl_info_native.setOnClickListener(new pvListener());
+        rl_info_address.setOnClickListener(new pvListener());
         rl_info_phone.setOnClickListener(new pvListener());
-        pv_record.setOnClickListener(new pvListener());
-        pv_graduation.setOnClickListener(new pvListener());
-        pv_place.setOnClickListener(new pvListener());
-        pv_position.setOnClickListener(new pvListener());
-        pv_salary.setOnClickListener(new pvListener());
+        rl_edu_record.setOnClickListener(new pvListener());
+        rl_edu_graduation.setOnClickListener(new pvListener());
+        rl_apply_place.setOnClickListener(new pvListener());
+        rl_apply_position.setOnClickListener(new pvListener());
+        rl_apply_salary.setOnClickListener(new pvListener());
 
         btn_submit = (Button) findViewById(R.id.btn_submit);
         btn_submit.setOnClickListener(new View.OnClickListener() {
@@ -153,7 +171,7 @@ public class ResumeActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch(v.getId()) {
-                case R.id.pv_sex:
+                case R.id.rl_info_sex:
                     OptionsPickerView sex_pvOptions = new OptionsPickerBuilder(
                             ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
@@ -170,7 +188,7 @@ public class ResumeActivity extends AppCompatActivity {
                     sex_pvOptions.setPicker(sexItems);
                     sex_pvOptions.show();
                     break;
-                case R.id.pv_age:
+                case R.id.rl_info_age:
                     OptionsPickerView age_pvOptions = new OptionsPickerBuilder(
                             ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
@@ -182,12 +200,12 @@ public class ResumeActivity extends AppCompatActivity {
                     }).setSubmitText("确定")//确定按钮文字
                             .setCancelText("取消")//取消按钮文字
                             .setTitleText("出生年份")
-                            .setSelectOptions(42)
+                            .setSelectOptions(38)
                             .build();
                     age_pvOptions.setPicker(ageItems);
                     age_pvOptions.show();
                     break;
-                case R.id.pv_native:
+                case R.id.rl_info_native:
                     OptionsPickerView native_pvOptions = new OptionsPickerBuilder(ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
                         public void onOptionsSelect(int options1, int options2, int options3, View v) {
@@ -202,7 +220,7 @@ public class ResumeActivity extends AppCompatActivity {
                     native_pvOptions.setPicker(provinceItems, pcItems);//三级选择器
                     native_pvOptions.show();
                     break;
-                case R.id.pv_address:
+                case R.id.rl_info_address:
                     OptionsPickerView address_pvOptions = new OptionsPickerBuilder(ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
                         public void onOptionsSelect(int options1, int options2, int options3, View v) {
@@ -221,7 +239,7 @@ public class ResumeActivity extends AppCompatActivity {
                     startActivityForResult(new Intent(
                             ResumeActivity.this,ChangePhoneActivity.class),20);
                     break;
-                case R.id.pv_record:
+                case R.id.rl_edu_record:
                     OptionsPickerView record_pvOptions = new OptionsPickerBuilder(
                             ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
@@ -238,7 +256,7 @@ public class ResumeActivity extends AppCompatActivity {
                     record_pvOptions.setPicker(recordItems);
                     record_pvOptions.show();
                     break;
-                case R.id.pv_graduation:
+                case R.id.rl_edu_graduation:
                     OptionsPickerView graduation_pvOptions = new OptionsPickerBuilder(
                             ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
@@ -255,7 +273,7 @@ public class ResumeActivity extends AppCompatActivity {
                     graduation_pvOptions.setPicker(graduationItems);
                     graduation_pvOptions.show();
                     break;
-                case R.id.pv_place:
+                case R.id.rl_apply_place:
                     OptionsPickerView place_pvOptions = new OptionsPickerBuilder(ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
                         public void onOptionsSelect(int options1, int options2, int options3, View v) {
@@ -270,7 +288,7 @@ public class ResumeActivity extends AppCompatActivity {
                     place_pvOptions.setPicker(provinceItems, pcItems);
                     place_pvOptions.show();
                     break;
-                case R.id.pv_position:
+                case R.id.rl_apply_position:
                     OptionsPickerView position_pvOptions = new OptionsPickerBuilder(ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override
                         public void onOptionsSelect(int options1, int options2, int options3, View v) {
@@ -285,7 +303,7 @@ public class ResumeActivity extends AppCompatActivity {
                     position_pvOptions.setPicker(positionItems);
                     position_pvOptions.show();
                     break;
-                case R.id.pv_salary:
+                case R.id.rl_apply_salary:
                     OptionsPickerView salary_pvOptions = new OptionsPickerBuilder(
                             ResumeActivity.this, new OnOptionsSelectListener() {
                         @Override

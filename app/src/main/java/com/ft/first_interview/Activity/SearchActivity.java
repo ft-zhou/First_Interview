@@ -1,7 +1,9 @@
 package com.ft.first_interview.Activity;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -28,5 +30,16 @@ public class SearchActivity extends AppCompatActivity{
         search_etSearch = (EditText) findViewById(R.id.search_etSearch);
         search_ivDelete = (ImageView) findViewById(R.id.search_ivDelete);
         search_tips_gridView = (GridView) findViewById(R.id.search_tips_gridView);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return true;
+        }
     }
 }

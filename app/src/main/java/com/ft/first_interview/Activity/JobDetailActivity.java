@@ -4,7 +4,9 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,9 +28,33 @@ public class JobDetailActivity extends AppCompatActivity {
     private Toast toast;
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.action_share:
+                Toast.makeText(this, "share", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_report:
+                Toast.makeText(this, "report", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobdetail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tv_company_name = (TextView) findViewById(R.id.tv_company_name);
         ll_to_company = (LinearLayout) findViewById(R.id.ll_to_company);
